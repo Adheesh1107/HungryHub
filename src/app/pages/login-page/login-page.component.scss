@@ -1,0 +1,44 @@
+@import "src/app/theme/_variables.scss";
+.login-page-container {
+  background-color: $theme-background-pink;
+  height: 100vh;
+}
+
+.image-container {
+  image {
+    width: 45rem;
+  }
+}
+.login-section {
+  margin-top: 8rem;
+  .login-container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    button {
+      background-color: $theme-red;
+    }
+  }
+  .sign-up-button-container {
+    .sign-up-link {
+      cursor: pointer;
+    }
+  }
+}
+
+.sign-up-section {
+  margin-top: 8rem;
+  .sign-up-container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    button {
+      background-color: $theme-red;
+    }
+  }
+  .login-button-container {
+    .login-link {
+      cursor: pointer;
+    }
+  }
+}

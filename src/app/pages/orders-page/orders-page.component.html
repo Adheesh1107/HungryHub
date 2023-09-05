@@ -1,0 +1,14 @@
+<div class="orders-page-container">
+  <!-- add loader -->
+  <div class="container">
+    <h2 class="row page-heading">Your Orders</h2>
+    <div
+      class="row orders-list-container"
+      *ngIf="!errorMessage && ordersData && ordersData.length > 0"
+    >
+      <div class="row" *ngFor="let order of ordersData">
+        <app-order [orderDetails]="order"></app-order>
+      </div>
+    </div>
+  </div>
+</div>

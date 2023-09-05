@@ -1,0 +1,8 @@
+@import "src/app/theme/_variables.scss";
+.orders-page-container {
+  background-color: $theme-background-pink;
+  .page-heading {
+    padding: 3rem 0 1rem;
+    font-size: 19px;
+  }
+}

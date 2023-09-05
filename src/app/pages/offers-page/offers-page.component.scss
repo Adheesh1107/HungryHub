@@ -1,0 +1,17 @@
+@import "src/app/theme/_variables.scss";
+.offers-page-container {
+  background-color: $theme-background-pink;
+  .page-heading {
+    padding: 3rem 0 1rem;
+    font-size: 19px;
+  }
+  .offers-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .offers-list-container::after {
+    content: "";
+    flex: auto;
+  }
+}

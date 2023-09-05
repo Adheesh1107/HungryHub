@@ -1,0 +1,20 @@
+@import "../../theme/variables";
+
+.header-container {
+  background-color: $theme-red;
+  padding: 11px 14.5rem;
+  .header-content {
+    display: flex;
+    color: white;
+    align-items: center;
+    padding-bottom: 3px;
+    .logo-container {
+      flex: 1;
+      font-size: 28px;
+    }
+    .action-buttons-container {
+      flex: 2;
+      color: white;
+    }
+  }
+}

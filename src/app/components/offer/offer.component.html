@@ -1,0 +1,41 @@
+<div
+  class="offer-details-container"
+  [ngClass]="{ 'inactive-offer': !offerDetails.available }"
+>
+  <div class="upper-container">
+    <div class="image-container">
+      <img
+        src="{{ loadOrderImage(offerDetails.cloudinaryImageId) }}"
+        class="offer-image"
+      />
+    </div>
+  </div>
+
+  <div class="lower-container">
+    <div class="row mb-2">
+      <div class="offer-details-section col-6">
+        <div class="offer-name">{{ offerDetails.name }}</div>
+        <div class="delivery-item-section">
+          Delivery in {{ offerDetails.deliveryTimeInMins }} mins
+        </div>
+      </div>
+      <div class="price-section col-6">
+        <div class="discounted-price">
+          ₹{{ formatPrice(offerDetails.price.discountPrice) }}
+        </div>
+        <div class="cost-price">
+          ₹{{ formatPrice(offerDetails.price.costPrice) }}
+        </div>
+      </div>
+    </div>
+
+    <div class="offer-action-container">
+      <button
+        class="btn primary-button-styling"
+        [disabled]="!offerDetails.available"
+      >
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>

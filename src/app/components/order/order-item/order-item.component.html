@@ -1,0 +1,5 @@
+<div class="order-items-container" *ngIf="orderItemDetails.length > 0">
+  <div *ngFor="let item of orderItemDetails">
+    <span>{{ item.name }}</span> X <span>{{ item.quantity }}</span>
+  </div>
+</div>

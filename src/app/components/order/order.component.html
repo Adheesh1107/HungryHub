@@ -1,0 +1,48 @@
+<div class="order-details-container row">
+  <div class="image-container col-2">
+    <img src="{{ loadOrderImage(orderDetails.imageId) }}" class="order-image" />
+  </div>
+  <div class="order-details-container col-6">
+    <h6>{{ orderDetails.restaurant }}</h6>
+    <p>{{ orderDetails.location }}</p>
+    <p class="order-id-section">Order #{{ orderDetails.id }}</p>
+    <app-order-item
+      [orderItemDetails]="orderDetails.orderItems"
+    ></app-order-item>
+  </div>
+  <div class="order-action-container col-4">
+    <div class="order-status-container">
+      <div>
+        <span
+          >{{
+            formatOrderStatus(orderDetails.status, orderDetails.orderDateTime)
+          }}
+        </span>
+      </div>
+      <span>Total : ₹{{ orderDetails.price.total }}</span>
+    </div>
+    <div class="buttons-container">
+      <button
+        *ngIf="
+          orderDetails.status === 'DELIVERED' ||
+          orderDetails.status === 'ORDERED'
+        "
+        class="btn primary-button-styling"
+      >
+        View Details
+      </button>
+      <button
+        *ngIf="orderDetails.status === 'ORDERED'"
+        class="btn primary-button-styling"
+      >
+        Track Order
+      </button>
+      <button
+        *ngIf="orderDetails.status === 'ORDERED'"
+        class="btn primary-button-styling"
+      >
+        Cancel Order
+      </button>
+    </div>
+  </div>
+</div>

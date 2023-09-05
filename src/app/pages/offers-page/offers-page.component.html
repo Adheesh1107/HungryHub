@@ -1,0 +1,14 @@
+<div class="offers-page-container">
+  <!-- add loader -->
+  <div class="container">
+    <h2 class="row page-heading">Offers</h2>
+    <div
+      class="offers-list-container"
+      *ngIf="!errorMessage && offersData && offersData.length > 0"
+    >
+      <div *ngFor="let offer of offersData">
+        <app-offer [offerDetails]="offer"></app-offer>
+      </div>
+    </div>
+  </div>
+</div>
