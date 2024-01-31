@@ -17,7 +17,7 @@ export class OrdersPageComponent implements OnInit {
     this._foodDetailsService.fetchOrders().subscribe(
       (orderDetails) => {
         this.ordersData = orderDetails.orders;
-        console.log(orderDetails);
+        // console.log(orderDetails);
         this.showLoader = false;
       },
       (error) => {

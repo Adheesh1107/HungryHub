@@ -17,7 +17,11 @@ export class LoginPageComponent implements OnInit {
   errorMessage = null;
   isSignUpMode = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
   ngOnInit(): void {}
 
   onSubmit(form: NgForm) {
@@ -25,14 +29,20 @@ export class LoginPageComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
     let authObservable: Observable<AuthResponseData>;
-    authObservable = this.authService.login(email, password);
-    this.showLoader = true;
+    if (this.isSignUpMode) {
+      authObservable = this.authService.signUp(email, password);
+    } else {
+      authObservable = this.authService.login(email, password);
+    }
+    // Add loader
+    // this.showLoader = true;
 
     authObservable.subscribe(
       (response) => {
         console.log(response);
         this.showLoader = false;
         this.errorMessage = null;
+        this.router.navigate(['/home']);
       },
       (errRes) => {
         console.log(errRes);
@@ -45,7 +55,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   switchSignUpMode() {
-    console.log(this.isSignUpMode);
+    // console.log(this.isSignUpMode);
     this.isSignUpMode = !this.isSignUpMode;
   }
 }

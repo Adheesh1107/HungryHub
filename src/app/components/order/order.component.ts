@@ -20,7 +20,7 @@ export class OrderComponent implements OnInit {
   constructor(private foodDetailsService: FoodDetailsService) {}
 
   ngOnInit(): void {
-    console.log(this.orderDetails);
+    // console.log(this.orderDetails);
   }
 
   loadOrderImage(imageId: string) {

@@ -18,7 +18,7 @@ export class OfferComponent implements OnInit {
   constructor(private foodDetailsService: FoodDetailsService) {}
 
   ngOnInit(): void {
-    console.log(this.offerDetails);
+    // console.log(this.offerDetails);
   }
 
   loadOrderImage(imageId: string) {

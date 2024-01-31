@@ -16,7 +16,7 @@ export class OffersPageComponent implements OnInit {
     this.foodDetailsService.fetchOffers().subscribe(
       (response) => {
         this.offersData = response?.result;
-        console.log(this.offersData);
+        // console.log(this.offersData);
       },
       (err) => {
         this.errorMessage = err;

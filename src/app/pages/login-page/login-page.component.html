@@ -1,7 +1,10 @@
 <div class="login-page-container">
   <div class="container">
     <div class="row">
-      <div class="col-7 image-container">
+      <div
+        class="col-7 image-container"
+        [ngClass]="{'className': this.status === }"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -117,7 +120,7 @@
                 type="submit"
                 [disabled]="!authForm.valid"
               >
-                Login
+                Sign up
               </button>
             </div>
           </form>

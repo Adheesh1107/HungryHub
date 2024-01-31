@@ -1,4 +1,40 @@
+@import "src/app/theme/_variables.scss";
+
 .home-page-container {
   background-color: rgb(255, 245, 236);
+  background-color: $theme-beige-1;
   height: 100vh;
+
+  .search-section {
+    .fade-text {
+      font-size: 10rem;
+      font-family: "Poppins";
+      font-weight: 700;
+      color: rgb(46, 38, 111);
+      opacity: 5%;
+      margin-top: 9rem;
+      line-height: 118px;
+    }
+    .section-description {
+      font-size: 60px;
+      font-family: "Poppins";
+      font-weight: 650;
+      color: rgb(46, 38, 111);
+      line-height: 62px;
+    }
+  }
+  .image-container {
+    image {
+      width: 750px;
+      height: 700px;
+    }
+  }
+  .location-text {
+    color: $theme-white;
+    background-color: $theme-red;
+    padding: 1rem 6rem;
+    font-size: 25px;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
 }
